@@ -9,6 +9,7 @@ const todoSchema = new Schema(
 		timestamps: true
 	}
 );
+
 const Todo = model('Todo', todoSchema);
 
 module.exports = Todo;

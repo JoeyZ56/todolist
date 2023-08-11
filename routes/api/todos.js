@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const todoctrl = require('../../controllers/api/todos');
+const todoCtrl = require('../../controllers/api/todos');
 
-//Order masters (index, delete, Update, create, Show)
-
-// Index /api/todos (root route)
-router.get('/', todoctrl.indexNotComplete, todoctrl.jsonTodos);
-//Index /api/todos/completed
-router.get('/completed', todoctrl.indexComplete, todoctrl.jsonTodos);
-//Delete /apo/todos/:id
-router.delete('/:id', todoctrl.destroy, todoctrl.jsonTodo);
-//Update /api/todos/:id
-router.put('/:id', todoctrl.update, todoctrl.jsonTodo);
-//Create /api/todos
-router.post('/', todoctrl.create, todoctrl.jsonTodo);
-//Show /api/todos/:id
-router.get('/:id', todoctrl.show, todoctrl.jsonTodo);
+// Index incomplete
+router.get('/', todoCtrl.indexNotComplete, todoCtrl.jsonTodos);
+// Index complete
+router.get('/completed', todoCtrl.indexComplete, todoCtrl.jsonTodos);
+// Delete
+router.delete('/:id', todoCtrl.destroy, todoCtrl.jsonTodo);
+// Update
+router.put('/:id', todoCtrl.update, todoCtrl.jsonTodo);
+// Create
+router.post('/', todoCtrl.create, todoCtrl.jsonTodo);
+// Show
+router.get('/:id', todoCtrl.show, todoCtrl.jsonTodo);
 
 module.exports = router;

@@ -11,16 +11,13 @@ export default function App() {
 
 	//createTodos
 	const createTodo = async () => {
-		// ... makes a copy of the state "newtodo"
 		const body = { ...newTodo };
 		try {
 			const response = await fetch('/api/todos', {
 				method: 'POST',
-				// Header is telling the backend its sending raw json data
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				//adds the "body" to the backend
 				body: JSON.stringify(body)
 			});
 			const createdTodo = await response.json();

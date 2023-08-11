@@ -35,16 +35,13 @@ function App() {
   //createTodos
   const createTodo = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(function* () {
-      // ... makes a copy of the state "newtodo"
       const body = _objectSpread({}, newTodo);
       try {
         const response = yield fetch('/api/todos', {
           method: 'POST',
-          // Header is telling the backend its sending raw json data
           headers: {
             'Content-Type': 'application/json'
           },
-          //adds the "body" to the backend
           body: JSON.stringify(body)
         });
         const createdTodo = yield response.json();
@@ -271,6 +268,7 @@ root.render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_0__
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.dF90VpCFmFTIHpnHLKQv {
+  /*! keep */
   font-size: 1.5rem;
   color: rgba(23, 5, 58, 0.8);
 }
@@ -286,7 +284,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.dF90VpCFmFTIHpnHLKQv {
   margin-left: 1rem;
   border: 2px;
   box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);
-}`, "",{"version":3,"sources":["webpack://./src/components/Todo/Todo.module.scss"],"names":[],"mappings":"AAAA;EACI,iBAAA;EACA,2BAAA;AACJ;AAAI;EACI,sCAAA;EACA,yBAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,iBAAA;EACA,WAAA;EACA,0CAAA;AAER","sourcesContent":[".todo {\n    font-size: 1.5rem;\n    color: rgba(23, 5, 58, 0.8);\n    .button {\n        background-color: rgba(23, 5, 58, 0.8);\n        text-transform: uppercase;\n        cursor: pointer;\n        color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        margin-left: 1rem;\n        border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Todo/Todo.module.scss"],"names":[],"mappings":"AAAA;EACI,UAAA;EACA,iBAAA;EACA,2BAAA;AACJ;AAAI;EACI,sCAAA;EACA,yBAAA;EACA,eAAA;EACA,iBAAA;EACA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,iBAAA;EACA,WAAA;EACA,0CAAA;AAER","sourcesContent":[".todo {\n    /*! keep */\n    font-size: 1.5rem;\n    color: rgba(23, 5, 58, 0.8);\n    .button {\n        background-color: rgba(23, 5, 58, 0.8);\n        text-transform: uppercase;\n        cursor: pointer;\n        color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        margin-left: 1rem;\n        border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"todo": `dF90VpCFmFTIHpnHLKQv`,
@@ -335,16 +333,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.wnFJvwW6SXbdzT0JPncz {
   margin: 1rem;
   border: 0;
   background-color: rgb(243, 245, 254);
-}
-
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}`, "",{"version":3,"sources":["webpack://./src/components/TodoList/TodoList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,2BAAA;EACA,kBAAA;EACA,sCAAA;EACA,aAAA;EACA,4CAAA;AACJ;AAAI;EACI,2BAAA;EACA,qBAAA;EACA,iBAAA;EACA,cAAA;EACA,YAAA;EACA,SAAA;EACA,oCAAA;AAER;;AAEA;EACI,SAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;AACJ","sourcesContent":[".todolist {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    font-size: 2rem;\n    color: rgba(23,5, 58, 0.8);\n    border-radius: 9px;\n    border: 1px solid rgba(23,5, 58, 0.1);\n    padding: 2rem;\n    box-shadow: 2px 4px 8px rgba(23,5, 58, 0.5);\n    .input {\n        color:rgba(23,5, 58, 0.8);\n        display: inline-block;\n        font-size: 2.5rem;\n        height: 3.5rem;\n        margin: 1rem;\n        border: 0;\n        background-color: rgb(243, 245, 254);\n    }\n}\n\nbody {\n    margin: 0;\n    height: 100vh;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/TodoList/TodoList.module.scss"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,eAAA;EACA,2BAAA;EACA,kBAAA;EACA,sCAAA;EACA,aAAA;EACA,4CAAA;AACJ;AAAI;EACI,2BAAA;EACA,qBAAA;EACA,iBAAA;EACA,cAAA;EACA,YAAA;EACA,SAAA;EACA,oCAAA;AAER","sourcesContent":[".todolist {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    font-size: 2rem;\n    color: rgba(23,5, 58, 0.8);\n    border-radius: 9px;\n    border: 1px solid rgba(23,5, 58, 0.1);\n    padding: 2rem;\n    box-shadow: 2px 4px 8px rgba(23,5, 58, 0.5);\n    .input {\n        color:rgba(23,5, 58, 0.8);\n        display: inline-block;\n        font-size: 2.5rem;\n        height: 3.5rem;\n        margin: 1rem;\n        border: 0;\n        background-color: rgb(243, 245, 254);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"todolist": `wnFJvwW6SXbdzT0JPncz`,
@@ -632,4 +621,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.7762677c11b3ee23d3b36e0037f6c1a6.js.map
+//# sourceMappingURL=App.f4b0881a77b9f5ce6656b681862788a5.js.map

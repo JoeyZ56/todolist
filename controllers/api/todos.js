@@ -1,6 +1,5 @@
 const Todo = require('../../models/todo');
 
-//hoisting the C.R.U.D. functionality (CAN NOT HOIST ARROW FUNCTIONS)
 module.exports = {
 	create,
 	indexComplete,
@@ -12,35 +11,30 @@ module.exports = {
 	jsonTodo
 };
 
-// jsonTodos, jsonTodo
-// views controllers
-
-// replace req with "_" if not being used in function (CAN NOT LEAVE BLANK!)
+// jsonTodos jsonTodo
+// viewControllers
 
 function jsonTodo(_, res) {
 	res.json(res.locals.data.todo);
 }
 
-//calls multiple todos
-
 function jsonTodos(_, res) {
 	res.json(res.locals.data.todos);
 }
 
-// Create
-
+/****** C - Create *******/
 async function create(req, res, next) {
 	try {
 		const todo = await Todo.create(req.body);
+		console.log(todo);
 		res.locals.data.todo = todo;
-		// next lets us know we can call the next function
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
 
-// Read "index, show"
+/****** R - Read *****/
 
 async function indexComplete(_, res, next) {
 	try {
@@ -48,7 +42,7 @@ async function indexComplete(_, res, next) {
 		res.locals.data.todos = todos;
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
 
@@ -58,7 +52,7 @@ async function indexNotComplete(_, res, next) {
 		res.locals.data.todos = todos;
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
 
@@ -68,11 +62,11 @@ async function show(req, res, next) {
 		res.locals.data.todo = todo;
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
 
-// Update
+/****** U - Update *****/
 
 async function update(req, res, next) {
 	try {
@@ -82,17 +76,18 @@ async function update(req, res, next) {
 		res.locals.data.todo = todo;
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
 
-// Destroy
+/***** D - destroy/delete *****/
+
 async function destroy(req, res, next) {
 	try {
 		const todo = await Todo.findByIdAndDelete(req.params.id);
 		res.locals.data.todo = todo;
 		next();
 	} catch (error) {
-		res.status(400).json({ message: error.message });
+		res.status(400).json({ msg: error.message });
 	}
 }
