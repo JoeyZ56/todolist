@@ -12,7 +12,7 @@ export default function TodoList({
 }) {
 	return (
 		<div className={styles.todolist}>
-			Add New Todo:
+			Add New Todo's:
 			<input
 				className={styles.input}
 				type="text"
